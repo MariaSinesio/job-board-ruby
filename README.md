@@ -1,24 +1,11 @@
-# README
+## Job board
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+*Job Board se trata de um projeto desenvolvido em Ruby On Rails, visando a simulação de plataformas, painéis de busca a empregos.*
 
-Things you may want to cover:
+### Ferramentas utilizadas 
 
-* Ruby version
+- Ruby On Rails 
+- PostgreSQL
+- Docker
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### 
