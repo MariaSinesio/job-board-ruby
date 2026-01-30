@@ -7,5 +7,6 @@
 - Ruby On Rails 
 - PostgreSQL
 - Docker
+- TailwindCss
 
 ### 

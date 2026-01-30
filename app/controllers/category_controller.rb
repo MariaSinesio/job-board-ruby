@@ -3,6 +3,6 @@ class CategoryController < ApplicationController
     render json: Category.all, status: :ok # Acessando todos os dados de Category em formato json e o status
   end
   def show
-    Category.find(params[:id])
+    render json: Category.find(params[:id]), status: :ok
   end
 end
