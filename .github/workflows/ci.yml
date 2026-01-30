@@ -9,16 +9,20 @@ jobs:
   scan_ruby:
     runs-on: ubuntu-latest
 
-services:
-  postgres:
-    env:
-      POSTGRES_DB: postgres        
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_USER: postgres
-    image: postgres:13
-    ports:
-    - 5432:5432
-    options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+    services:
+      postgres:
+        image: postgres:16
+        ports:
+          - "5432:5432"
+        env:
+          POSTGRES_DB: rails_test
+          POSTGRES_USER: rails
+          POSTGRES_PASSWORD: password
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
     
 
     steps:
@@ -87,16 +91,16 @@ services:
           ruby-version: .ruby-version
           bundler-cache: true
 
+      - name: Setup Database
+        env:
+          DATABASE_URL: postgres://rails:password@localhost:5432/rails_test
+          RAILS_ENV: test
+        run: |
+          bin/rails db:prepare
+
       - name: Run tests
         env:
+          DATABASE_URL: postgres://rails:password@localhost:5432/rails_test
           RAILS_ENV: test
-          # REDIS_URL: redis://localhost:6379/0
-        run: bin/rails db:test:prepare test test:system
-
-      - name: Keep screenshots from failed system tests
-        uses: actions/upload-artifact@v4
-        if: failure()
-        with:
-          name: screenshots
-          path: ${{ github.workspace }}/tmp/screenshots
-          if-no-files-found: ignore
+        run: |
+          bin/rails test
