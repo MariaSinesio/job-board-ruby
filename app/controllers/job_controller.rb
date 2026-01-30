@@ -5,10 +5,10 @@ class JobController < ApplicationController
   def show
     render json: Job.find(params[:id]), status: :ok
   end # Próximo passo: Filtrar vagas por categorias  (Filtrar pelo id ou pelo nome)
-  def find_and_filter 
+  def find_and_filter
    # fjobs= Job.where(category: params[:label])
    # N+1 com perda de desempenho, .includes (Reduz número de queries)
-   @jobs = Job.includes(:category).where(category: {label: 'TI'}) # Acesso dentro de uma lista as categorias 
+   @jobs = Job.includes(:category).where(category: { label: "TI" }) # Acesso dentro de uma lista as categorias
    @jobs.each do |i|
     puts jobs.name
     puts jobs.description
