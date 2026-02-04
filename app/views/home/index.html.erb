@@ -1,5 +1,17 @@
-<header class="flex"></header>
+<%= render "layouts/nav"%>
 
-<h1 class="text-3xl font-bold underline italic">Oi</h1>
+<section>
+    <h1>
+        Conquiste o emprego dos seus sonhos
+    </h1>
+</section>
+
+<div>
+     <%@add_recently.each do |i|%>
+    <li><%=i.name%></li>
+    <li><%=i.category.label%></li>
+    <%end%>
+</div>
 
 <%# Partials permite a reutilização de código de views %>
+

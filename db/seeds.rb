@@ -9,5 +9,5 @@
 #   end
 # Dados falsos injetados sem que tenha que digitar no form (Front)
 
-Category.create(label: "Jovem Aprendiz")
-Job.create(description: "A description", name: "Jovem aprendiz", category_id: 2)
+Job.create(description: "A description", name: "Product Designer", category_id: 4)
+Job.create(description: "A description", name: "Designer", category_id: 4)
