@@ -1,18 +1,21 @@
-<header>
-    <nav>
-        <div>
-                <img src="" alt="">
-                <h1>Jobmine</h1>
+<header class="bg-[#D9D9D9]">
+    <nav class="flex justify-between items-center py-6 px-0 max-w-7xl mx-auto">
+        <div class="flex items-center gap-3">
+        <img src="" alt="">
+        <h1 class="text-xl ">Jobmine</h1>
         </div>
-        <div>Home</div>
-        <div>Sobre</div>
+        <div class="text-sm flex items-center gap-72">
+            <%=link_to "Home", root_path%>
+            <%=link_to "Sobre nós"%>
+        </div>
+        <button class="">Login</button>
     </nav>
 </header>
 
-<main>
+<main class="container mx-auto py-6 px-3 h-auto">
     <%=yield%>
 </main>
 
-<footer>
+<footer class="bg-[#D9D9D9] text-center mt-12 py-9">
         <h3>Eu sou seu rodapé</h3>
 </footer>
