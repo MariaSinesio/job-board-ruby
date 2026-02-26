@@ -63,4 +63,4 @@ group :test do
 end
 
 gem "tailwindcss-rails", "~> 4.4"
-gem "rspec-rails", group: [:development, :test]
+gem "rspec-rails", group: [ :development, :test ]
