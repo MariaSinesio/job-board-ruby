@@ -1,5 +1,37 @@
-<header class="flex"></header>
+<%= render "layouts/header"%>
 
-<h1 class="text-3xl font-bold underline italic">Oi</h1>
+<section class="7x1 bg-[#D9D9D9] py-12 px-0 mt-10">
 
+    <div class="flex flex-col items-center justify-center gap-12 p-10">
+    <div class="7x1 mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-8 items-center">
+    <h1 class="px-64 text-5xl">
+        Conquiste o
+        <br>
+        trabalho 
+        <br>
+        dos seus 
+        <br>
+        sonhos
+    </h1>
+    </div>
+
+     <div class="relative ">
+        <%= image_tag "main.png", class:"absolute w-120 h-100 max-w-full h-auto object-contain drop-shadow-xl gap-9"%>
+        </div class="bg-[#36454F]"> 
+
+    </div>
+    </div>
+</section>
+<div class="flex justify-between items-center max-w-7xl mx-auto mt-12">
+    <h1 class="font-semibold text-xl">
+        Adicionados recentemente
+    </h1>
+</div>
+<%= render "layouts/cards"%>
+
+<div class="text-sm flex items-center">
+    <%# <%= link_to "job"%> 
+</div>
+<%= render "layouts/footer"%>
 <%# Partials permite a reutilização de código de views %>
+
