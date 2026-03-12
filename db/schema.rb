@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_02_27_132446) do
+ActiveRecord::Schema[8.0].define(version: 2026_03_04_141024) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -28,7 +28,9 @@ ActiveRecord::Schema[8.0].define(version: 2026_02_27_132446) do
     t.datetime "updated_at", null: false
     t.decimal "salary_max"
     t.decimal "salary_min"
+    t.bigint "locales_id"
     t.index ["category_id"], name: "index_jobs_on_category_id"
+    t.index ["locales_id"], name: "index_jobs_on_locales_id"
   end
 
   create_table "locales", force: :cascade do |t|
@@ -37,8 +39,8 @@ ActiveRecord::Schema[8.0].define(version: 2026_02_27_132446) do
     t.datetime "updated_at", null: false
     t.string "state"
     t.string "city"
-    t.string "neighbourhood"
   end
 
   add_foreign_key "jobs", "categories"
+  add_foreign_key "jobs", "locales", column: "locales_id"
 end
