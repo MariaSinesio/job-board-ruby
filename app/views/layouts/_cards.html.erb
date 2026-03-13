@@ -6,8 +6,13 @@
     <span><%=i.category.label%></span>
     <div class="flex flex-col mt-6 justify-between">
         <br>
+        <%# <button class="bg-[#36454F] p-3 text-white"> Mais detalhes </button> %>
+        <%=link_to "Mais detalhes", job_path(i)%> 
         <button class="bg-[#36454F] p-3 text-white"> Mais detalhes </button>
     </div>
     </div>
     <%end%>
 </div>
+
+<%# form_class: "inline", class:"bg-[#36454F] p-3 text-white %>
+
