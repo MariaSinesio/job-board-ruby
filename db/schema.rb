@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema[8.0].define(version: 2026_03_04_141024) do
   
-ActiveRecord::Schema[8.0].define(version: 2026_02_27_132446) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
