@@ -1,6 +1,6 @@
 <%= render "layouts/header"%>
 
-<section class="7x1 bg-[#D9D9D9] py-12 px-0 mt-10">
+<section class="7x1 bg-[#D9D9D9] py-12 px-0 mt-6">
 
     <div class="flex flex-col items-center justify-center gap-12 p-10">
     <div class="7x1 mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-8 items-center">
@@ -28,6 +28,8 @@
     </h1>
 </div>
 <%= render "layouts/cards"%>
+
+<%=button_to "Ver mais", job_index_path, method: :get, class: "absolute"%>
 
 <div class="text-sm flex items-center">
     <%# <%= link_to "job"%> 
