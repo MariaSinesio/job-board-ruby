@@ -7,7 +7,5 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-# Dados falsos injetados sem que tenha que digitar no form (Front)
 
-# Job.create(description: "A description", name: "Product Designer", category_id: 4)
-# Job.create(description: "A description", name: "Designer", category_id: 4)
+# Dados falsos injetados sem que tenha que digitar no form (Front) 

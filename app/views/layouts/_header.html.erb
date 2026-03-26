@@ -1,14 +1,13 @@
 <header class="bg-[#D9D9D9]">
     <nav class="flex justify-between items-center py-6 px-0 max-w-7xl mx-auto">
         <div class="flex items-center gap-3">
-        <img src="" alt="">
         <h1 class="text-xl ">Jobmine</h1>
         </div>
         <div class="text-sm flex items-center gap-72">
             <%=link_to "Home", root_path%>
             <%=link_to "Sobre nós", about_path%>
         </div>
-        <button class="">Login</button>
+        <%= button_to "Login", new_session_path, method: :get, class: "bg-[#36454F] rounded-sm text-white px-3 p-[3px]"%>
     </nav>
 </header>
 

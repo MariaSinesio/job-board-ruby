@@ -5,3 +5,4 @@ class AddDetailsToLocales < ActiveRecord::Migration[8.0]
     add_column :locales, :neighbourhood, :string
   end
 end
+

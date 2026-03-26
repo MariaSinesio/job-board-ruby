@@ -1,4 +1,4 @@
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto pt-9">
+<section class="grid lg:grid-cols-3 gap-6 max-w-7xl mx-auto pt-9">
     <%@add_recently.each do |i|%>
     <div class="bg-[#F7CECF] p-6">
     <span><h1 class="text-xl font-semibold"><%=i.name%></h1></span>
@@ -7,12 +7,12 @@
     <div class="flex flex-col mt-6 justify-between">
         <br>
         <%# <button class="bg-[#36454F] p-3 text-white"> Mais detalhes </button> %>
-        <%=link_to "Mais detalhes", job_path(i)%> 
-        <button class="bg-[#36454F] p-3 text-white"> Mais detalhes </button>
+        <div class="flex justify-center align-center">
+        <%=button_to "Mais detalhes", job_path(i), method: :get, class: "bg-[#36454F] text-white font-medium px-18 p-3 rounded-sm"%>
+        </div>
     </div>
     </div>
     <%end%>
-</div>
+</section>
 
 <%# form_class: "inline", class:"bg-[#36454F] p-3 text-white %>
-
