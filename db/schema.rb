@@ -29,8 +29,8 @@ ActiveRecord::Schema[8.0].define(version: 2026_03_19_143731) do
     t.decimal "salary_max"
     t.decimal "salary_min"
     t.bigint "locales_id"
-    t.index ["category_id"], name: "index_jobs_on_category_id"
-    t.index ["locales_id"], name: "index_jobs_on_locales_id"
+    t.index [ "category_id" ], name: "index_jobs_on_category_id"
+    t.index [ "locales_id" ], name: "index_jobs_on_locales_id"
   end
 
   create_table "locales", force: :cascade do |t|
