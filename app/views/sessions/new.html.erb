@@ -1,0 +1,41 @@
+<%= render "layouts/header"%>
+
+<section class=" max-w-7xl mx-auto bg-[#36454F] grid grid-cols-1 md:grid-cols-2 rounded-sm gap-9 mt-6">  
+
+<%= form_with url: session_url, class: "contents" do |form| %>
+
+
+<%= link_to "Sign up", new_session_path, class: ""%>
+<%= link_to "Sign in", session_path, class: ""%>
+
+<div>
+<%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "email", placeholder: "Digite seu email aqui", value: params[:email_address], class: "bg-[#D9D9D9]" %>
+<%= form.password_field :password, required: true, autofocus: true, autocomplete: "password", placeholder: "Digite sua senha", value: params[:password], class: "bg-[#D9D9D9]"%>
+</div>
+
+<div class="">
+<%= image_tag "login_image.png", class: ""%>
+</div>
+
+<div>
+<%= %>
+</div>
+<%end%>
+</section>
+
+<%= render "layouts/footer"%>
+
+<%# box-sizing: border-box;
+
+position: absolute;
+width: 1184px;
+height: 816px;
+left: 128px;
+top: 163px;
+
+background: #36454F;
+border: 1px solid #000000;
+box-shadow: -5px 1px 4px rgba(0, 0, 0, 0.25);
+border-radius: 6px; %>
+
+<%# py-12 px-0 mt-6 gap-12 %>

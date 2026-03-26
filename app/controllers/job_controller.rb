@@ -1,4 +1,5 @@
 class JobController < ApplicationController
+  allow_unauthenticated_access only: [:index, :show]
   def index
     @jbs = Job.all
   end
