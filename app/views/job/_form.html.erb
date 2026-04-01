@@ -1,2 +1,15 @@
 <%# form é uma partial que organiza e economiza tempo  %>
-
+<section>
+    <div>
+        <h1>
+            <%# <%=@show_jobs.name%> %>
+        </h1>
+        <p>
+            <%# <%=@show_jobs.label%>
+        </p>
+        <strong>
+            Postada há <%time_ago_in_words(@jobs.&created_at)%> 
+            <%# Operador de navegação %>
+        </strong>
+    </div>
+</section>

@@ -1,11 +1,11 @@
 class JobController < ApplicationController
   allow_unauthenticated_access only: [ :index, :show ]
   def index
-    @jbs = Job.all
+    @job_index = Job.all
   end
   def show
+    @view_details = Job.includes(:category).find(params[:id])
     @show_job = Job.find(params[:id])
-    # render json: @jobs, status: 'ok'
   end
   # Próximo passo: Filtrar vagas por categorias  (Filtrar pelo id ou pelo nome)
   def find_and_filter
