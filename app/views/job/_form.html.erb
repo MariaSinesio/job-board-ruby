@@ -1,15 +1,17 @@
 <%# form é uma partial que organiza e economiza tempo  %>
 <section>
     <div>
+        <% @view_details.each do |job|%>
         <h1>
-            <%# <%=@show_jobs.name%> %>
+            <%=job.name%> 
         </h1>
         <p>
-            <%# <%=@show_jobs.label%>
+            <%# <%=job.label%>
         </p>
         <strong>
-            Postada há <%time_ago_in_words(@jobs.&created_at)%> 
+            <%# Postada há <%time_ago_in_words(@jobs.&created_at)%> 
             <%# Operador de navegação %>
         </strong>
+        <%end%>
     </div>
 </section>

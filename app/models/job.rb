@@ -3,6 +3,7 @@ class Job < ApplicationRecord
   belongs_to :locale
   validates :name, presence: true
   validates :description, presence: true
+  validates :locale_id, :category_id, presence: true
 
   def self.search(search)
     if search
