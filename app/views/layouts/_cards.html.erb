@@ -5,11 +5,7 @@
     <br>
     <span><%=i.category.label%></span>
     <span><%=i.locale&.state || "Não informado"%></span> 
-    <span><%=i.jobs.salary_max  || "Sem pretensão salarial"</span>
-    <%# Antes tava dando erro porque as outras 5 que eu tinha registrado foi sem esse detalhe, colocando um operador de navgação segura OU informar que a localização não foi informada é a melhor forma de lidar com o restante, além de obrigar, a partir de agora, que tenha localização. %>
-    <div class="flex flex-col mt-6 justify-between">
-        <br>
-        <%# <button class="bg-[#36454F] p-3 text-white"> Mais detalhes </button> %>
+         <div class="flex flex-col mt-6 justify-between">
         <div class="flex justify-center align-center">
         <%=button_to "Mais detalhes", job_path(i), method: :get, class: "bg-[#36454F] text-white font-medium px-18 p-3 rounded-sm"%>
         </div>
@@ -19,3 +15,4 @@
 </section>
 
 <%# form_class: "inline", class:"bg-[#36454F] p-3 text-white %>
+<%# Antes tava dando erro porque as outras 5 que eu tinha registrado foi sem esse detalhe, colocando um operador de navgação segura OU informar que a localização não foi informada é a melhor forma de lidar com o restante, além de obrigar, a partir de agora, que tenha localização. %>
