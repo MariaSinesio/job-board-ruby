@@ -1,0 +1,32 @@
+<section class="max-w-7xl mx-auto bg-[#36454F] rounded-lg mt-6">  
+
+  <%= form_with url: session_url, class: "grid grid-cols-1 md:grid-cols-2 gap-0" do |form| %>
+    
+
+    <article class="flex flex-col justify-center p-12 lg:p-20">
+
+      <div class="mb-8 flex gap-4">
+        <%= link_to "Sign up", new_session_path, class: "text-white font-semibold" %>
+        <%= link_to "Sign in", session_path, class: "text-white font-semibold" %>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <%= form.email_field :email_address, required: true, placeholder: "Digite seu email aqui", class: "w-full p-3 rounded bg-[#D9D9D9] border-none" %>
+        
+        <%= form.password_field :password, required: true, placeholder: "Digite sua senha", class: "w-full p-3 rounded bg-[#D9D9D9] border-none" %>
+        
+        <%= form.submit "Entrar", class: "mt-4 bg-white text-[#36454F] font-bold py-3 rounded cursor-pointer" %>
+      </div>
+
+      <div class="mt-8 flex gap-4 text-xs text-gray-300">
+        <%= link_to "Termos de serviço", root_path, class: "hover:underline" %>
+        <%= link_to "Ajuda", root_path, class: "hover:underline" %>
+      </div>
+    </article>
+
+    <div class="md:block mr-6">
+      <%= image_tag "login_image.png", class: "w-full h-full object-cover" %>
+    </div>
+
+  <% end %>
+</section>
