@@ -5,9 +5,9 @@ Rails.application.routes.draw do
  root "home#index"
  resources :category
  resources :job do
-  get "search", to: "job#search"
+ get "search", to: "job#search"
+ get "/explore", to: "explore#index"
  end
- get "/about", to: "about#index"
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
