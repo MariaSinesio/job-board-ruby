@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_03_19_143731) do
+ActiveRecord::Schema[8.0].define(version: 2026_04_02_120342) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -26,11 +26,11 @@ ActiveRecord::Schema[8.0].define(version: 2026_03_19_143731) do
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.decimal "salary_max"
-    t.decimal "salary_min"
-    t.bigint "locales_id"
-    t.index [ "category_id" ], name: "index_jobs_on_category_id"
-    t.index [ "locales_id" ], name: "index_jobs_on_locales_id"
+    t.decimal "salary_max", precision: 10, scale: 2
+    t.decimal "salary_min", precision: 10, scale: 2
+    t.bigint "locale_id"
+    t.index ["category_id"], name: "index_jobs_on_category_id"
+    t.index ["locale_id"], name: "index_jobs_on_locale_id"
   end
 
   create_table "locales", force: :cascade do |t|
@@ -47,7 +47,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_03_19_143731) do
     t.string "user_agent"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index [ "user_id" ], name: "index_sessions_on_user_id"
+    t.index ["user_id"], name: "index_sessions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -55,10 +55,10 @@ ActiveRecord::Schema[8.0].define(version: 2026_03_19_143731) do
     t.string "password_digest", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index [ "email_address" ], name: "index_users_on_email_address", unique: true
+    t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 
   add_foreign_key "jobs", "categories"
-  add_foreign_key "jobs", "locales", column: "locales_id"
+  add_foreign_key "jobs", "locales"
   add_foreign_key "sessions", "users"
 end

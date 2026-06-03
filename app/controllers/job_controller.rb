@@ -4,7 +4,7 @@ class JobController < ApplicationController
     @job_index = Job.all
   end
   def show
-    @view_details = Job.includes(:category).find(params[:id])
+    @view_details = Job.includes(:category, :locale).find(params[:id])
     @show_job = Job.find(params[:id])
   end
   # Próximo passo: Filtrar vagas por categorias  (Filtrar pelo id ou pelo nome)

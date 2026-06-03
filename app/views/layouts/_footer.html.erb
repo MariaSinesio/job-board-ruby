@@ -2,6 +2,17 @@
     <%= yield%>
 </main>
 
-<footer class="flex flex-column min-h-[120px] bg-[#D9D9D9] text-center mt-12">
-        <h3>Eu sou seu rodapé</h3>
+<footer class="flex-1 w-full bg-[#D9D9D9] mt-12 p-6">
+    <h1 class="font-bold text-xl">JobMine</h1>
+    <div class="">
+        <ul>
+            <li><%= link_to "Trabalhe conosco", root_path %></li>
+            <li><%= link_to "Termos de serviço", root_path%></li>
+            <li><%=link_to "Home", root_path%></li>
+        </ul>
+    </div>
+    <div class="">
+        <p>JobMine - Faça acontecer</p>
+        <p>Copyright &copy;2026, todos os direitos reservados.</p>
+    </div>
 </footer>
